@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New Recipes</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-recipe-item
+    *ngFor="let recipe_element of recipes"
+    [recipe]="recipe_element" 
+    (recipeSelected)="onRecipeSelected(recipe_element)"></app-recipe-item> 
+    <!--[recipe] targets the @Input recipe: Recipe from recipe-item.component
+        recipeSelected comes from the recipe-item component, and onRecipeSelected goes to recipe-list.component, WE ARE MAKING A CHAIN OF EVENTEMMITTED FUNCTIONS-->
+  </div>
+</div>
