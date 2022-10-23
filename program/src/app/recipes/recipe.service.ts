@@ -21,6 +21,10 @@ export class RecipeService {
   // )
   // ];
 
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+
   getRecipes(){ //allows access from outside whereas private prohibits it
     return this.recipes.slice(); //.slice will return new array (a copy) of current one so it can't be altered
   }

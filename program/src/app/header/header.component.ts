@@ -11,8 +11,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent{
   collapsed = true;
-  @Output() featureSelected = new EventEmitter<string>(); //@output enables this propertyy to make it listenable from parent component (the app.component) onNavigate from app.component is activated 
-  onSelect(feature: string){
-    this.featureSelected.emit(feature);
-  }
+  // @Output() featureSelected = new EventEmitter<string>(); //@output enables this propertyy to make it listenable from parent component (the app.component) onNavigate from app.component is activated 
+  // onSelect(feature: string){
+  // //   this.featureSelected.emit(feature);
+  // }
 }
