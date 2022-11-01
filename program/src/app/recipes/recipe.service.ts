@@ -1,4 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
+// import { Subject } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from './recipe.model';
@@ -7,7 +8,8 @@ import { Recipe } from './recipe.model';
   providedIn: 'root'
 })
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
+  // recipeSelected = new EventEmitter<Recipe>();
+  // recipeSelected = new Subject<Recipe>(); //Dont need this because of routing
 
   private recipes: Recipe[] = [
     new Recipe('Mimikyu Frightful Feast',"This is a test recipe","assets/RecipeImg.jpg", [new Ingredient('Meat',1), new Ingredient("Cheese",3)]),

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from './recipe.model';
+// import { Recipe } from './recipe.model';
 import { RecipeService } from './recipe.service';
 // import { RecipeService } from './recipe.service'; //Bro Thayne doesnt want us doing this
 
@@ -10,17 +10,18 @@ import { RecipeService } from './recipe.service';
   //providers: [RecipeService] //Bro Thayne doesnt want us doing this
 })
 export class RecipesComponent implements OnInit {
-  selectedRecipe: Recipe;
+  // selectedRecipe: Recipe; //DON"T NEED THIS BECAUSE OF ROUTING
 
-  constructor(private recipeService: RecipeService) { }
+  // constructor(private recipeService: RecipeService) { }  //DON"T NEED THIS BECAUSE OF ROUTING
+  constructor() { }
 
   ngOnInit(): void {
-    this.recipeService.recipeSelected
-      .subscribe(
-        (recipe: Recipe) => {
-          this.selectedRecipe = recipe;
-        }
-      )
+    // this.recipeService.recipeSelected //DON"T NEED THIS BECAUSE OF ROUTING
+    //   .subscribe(
+    //     (recipe: Recipe) => {
+    //       this.selectedRecipe = recipe;
+    //     }
+    //   )
   }
 
 }

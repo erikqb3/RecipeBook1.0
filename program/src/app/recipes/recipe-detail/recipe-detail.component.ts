@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 
@@ -14,6 +14,7 @@ export class RecipeDetailComponent implements OnInit {
   // @Input() recipe: Recipe; //@Input allows it to be set from outside, whatever is clicked. //don't need Input when doing routing
   
   constructor(private recipeService:RecipeService,
+              private router: Router,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -31,5 +32,8 @@ export class RecipeDetailComponent implements OnInit {
   onAddToShoppingList(){
     this.recipeService.addIngredientsToShopppingList(this.recipe.ingredients)
   }
-
+  onEditRecipe(){
+    // this.router.navigate(['../',this.id,'edit'], {relativeTo: this.route}) //more complicated way of constructing, go up one and add other stuff
+    this.router.navigate(['edit'], {relativeTo: this.route})
+  }
 }
